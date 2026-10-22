@@ -202,13 +202,13 @@ a{color:var(--cool)}
 </style>
 
 </head><body><nav class="tabs" aria-label="分頁"><div class="tabs-in" role="tablist">
-  <button class="tab" role="tab" id="t-emtp" aria-controls="v-emtp" aria-selected="true">EMT 教學</button>
-  <button class="tab" role="tab" id="t-furry" aria-controls="v-furry" aria-selected="false">毛毛限定版</button>
+  <button class="tab" role="tab" id="t-furry" aria-controls="v-furry" aria-selected="true">毛毛限定版</button>
+  <button class="tab" role="tab" id="t-emtp" aria-controls="v-emtp" aria-selected="false">EMT 教學</button>
   <button class="tab" role="tab" id="t-layout" aria-controls="v-layout" aria-selected="false">毛毛休息區與醫療站配置與物品</button>
 </div></nav>
 
 <!-- ======================= 分頁一：EMT-P 教學 ======================= -->
-<div id="v-emtp" role="tabpanel" aria-labelledby="t-emtp">
+<div id="v-emtp" role="tabpanel" aria-labelledby="t-emtp" hidden>
 <div class="wrap">
 <nav class="toc" aria-label="章節">
   <b>章節</b>
@@ -819,7 +819,7 @@ a{color:var(--cool)}
 </div>
 
 <!-- ======================= 分頁二：毛毛活動講稿 ======================= -->
-<div id="v-furry" role="tabpanel" aria-labelledby="t-furry" hidden>
+<div id="v-furry" role="tabpanel" aria-labelledby="t-furry">
 <div class="wrap">
 <nav class="toc" aria-label="講稿段落">
   <b>講稿段落</b>
@@ -1703,8 +1703,8 @@ a{color:var(--cool)}
 </div>
 
 <script>
-const TABS={emtp:'v-emtp',furry:'v-furry',layout:'v-layout'};
-function openTab(k,push){if(!TABS[k])k='emtp';
+const TABS={furry:'v-furry',emtp:'v-emtp',layout:'v-layout'};
+function openTab(k,push){if(!TABS[k])k='furry';
   for(const [n,id] of Object.entries(TABS)){const on=n===k;document.getElementById(id).hidden=!on;document.getElementById('t-'+n).setAttribute('aria-selected',on?'true':'false');}
   if(push){try{history.replaceState(null,'','#'+k)}catch(e){} window.scrollTo(0,0);}}
 for(const k of Object.keys(TABS)) document.getElementById('t-'+k).addEventListener('click',()=>openTab(k,true));
