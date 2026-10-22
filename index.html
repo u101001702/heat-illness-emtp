@@ -204,7 +204,6 @@ a{color:var(--cool)}
 </head><body><nav class="tabs" aria-label="分頁"><div class="tabs-in" role="tablist">
   <button class="tab" role="tab" id="t-furry" aria-controls="v-furry" aria-selected="true">毛毛限定版</button>
   <button class="tab" role="tab" id="t-emtp" aria-controls="v-emtp" aria-selected="false">EMT 教學</button>
-  <button class="tab" role="tab" id="t-layout" aria-controls="v-layout" aria-selected="false">毛毛休息區與醫療站配置與物品</button>
 </div></nav>
 
 <!-- ======================= 分頁一：EMT-P 教學 ======================= -->
@@ -831,6 +830,7 @@ a{color:var(--cool)}
     <li><a href="#k-d">緊急處置</a></li>
     <li><a href="#k-e">事前整備</a></li>
     <li><a href="#k-end">結尾與參考</a></li>
+    <li><a href="#k-layout">休息區與醫療站</a></li>
   </ol>
 </nav>
 <main>
@@ -1141,12 +1141,9 @@ a{color:var(--cool)}
     <li>Horn GP, et al. <i>Prehosp Emerg Care</i>. 2011;15:214–225；Colburn D, et al. <i>Prehosp Emerg Care</i>. 2011;15:226–232.</li>
   </ol>
 </section>
-</main>
-</div>
-</div>
-
-<!-- ======================= 分頁三：醫療站配置圖 ======================= -->
-<div id="v-layout" role="tabpanel" aria-labelledby="t-layout" hidden>
+<section id="k-layout">
+  <div class="part">附錄：毛毛休息區與醫療站配置與物品</div>
+<div id="v-layout">
 <style>#v-layout{
   --L-bg:#f6f5f1; --L-surface:#ffffff; --L-ink:#1f2328; --L-muted:#5d636b; --L-line:#c9ccd1; --L-line-strong:#8a9099;
   --L-accent:#2f5d8a;
@@ -1701,15 +1698,19 @@ a{color:var(--cool)}
 </section>
 </div>
 </div>
+</section>
+</main>
+</div>
+</div>
 
 <script>
-const TABS={furry:'v-furry',emtp:'v-emtp',layout:'v-layout'};
+const TABS={furry:'v-furry',emtp:'v-emtp'};
 function openTab(k,push){if(!TABS[k])k='furry';
   for(const [n,id] of Object.entries(TABS)){const on=n===k;document.getElementById(id).hidden=!on;document.getElementById('t-'+n).setAttribute('aria-selected',on?'true':'false');}
   if(push){try{history.replaceState(null,'','#'+k)}catch(e){} window.scrollTo(0,0);}}
 for(const k of Object.keys(TABS)) document.getElementById('t-'+k).addEventListener('click',()=>openTab(k,true));
-(function(){const h=(location.hash||'').slice(1); if(TABS[h]) return openTab(h);
-  const el=h&&document.getElementById(h); if(el){for(const [n,id] of Object.entries(TABS)) if(el.closest('#'+id)) return openTab(n);} })();
+(function(){let h=(location.hash||'').slice(1); if(h==='layout'){h='k-layout';} if(TABS[h]) return openTab(h);
+  const el=h&&document.getElementById(h); if(el){for(const [n,id] of Object.entries(TABS)) if(el.closest('#'+id)){openTab(n); requestAnimationFrame(()=>el.scrollIntoView()); return;}} })();
 
 const T='<span class="src s-t">Tintinalli</span>', W='<span class="src s-w">WMS 2024</span>', N='<span class="src s-n">NATA 2015</span>', A='<span class="src s-a">ACSM 2023</span>';
 const g=s=>'<span class="g">'+s+'</span>';
