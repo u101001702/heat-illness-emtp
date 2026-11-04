@@ -60,10 +60,10 @@ p{margin:0 0 14px;max-width:68ch}
 .s-i{background:transparent;color:var(--warn);border:1px dashed var(--warn)}
 .s-c{background:transparent;color:var(--nata);border:1px dashed var(--nata)}
 .s-m{background:var(--ok-soft);color:var(--ok)}
-:root{--lv1:#dcefe1;--lv2:#f6eda3;--lv3:#f5c78f;--lv4:#f2b1a8;--lv-ink:#15212b}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--lv1:#1d3a26;--lv2:#4a4416;--lv3:#5a3514;--lv4:#5c201b;--lv-ink:#e3eaef}}
-:root[data-theme="dark"]{--lv1:#1d3a26;--lv2:#4a4416;--lv3:#5a3514;--lv4:#5c201b;--lv-ink:#e3eaef}
-tr.lv1 td{background:var(--lv1);color:var(--lv-ink)} tr.lv2 td{background:var(--lv2);color:var(--lv-ink)} tr.lv3 td{background:var(--lv3);color:var(--lv-ink)} tr.lv4 td{background:var(--lv4);color:var(--lv-ink)}
+:root{--pink:#fde4ea;--lv1:#dcefe1;--lv2:#f6eda3;--lv3:#f5c78f;--lv4:#f2b1a8;--lv-ink:#15212b}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--pink:#4a2430;--lv1:#1d3a26;--lv2:#4a4416;--lv3:#5a3514;--lv4:#5c201b;--lv-ink:#e3eaef}}
+:root[data-theme="dark"]{--pink:#4a2430;--lv1:#1d3a26;--lv2:#4a4416;--lv3:#5a3514;--lv4:#5c201b;--lv-ink:#e3eaef}
+tr.lv1 td{background:var(--lv1);color:var(--lv-ink)} tr.lv2 td{background:var(--lv2);color:var(--lv-ink)} tr.lv3 td{background:var(--lv3);color:var(--lv-ink)} tr.lv4 td{background:var(--lv4);color:var(--lv-ink)} tr.pink td{background:var(--pink);color:var(--lv-ink)}
 table.hi{min-width:760px;font-size:13px;text-align:center}
 table.hi th,table.hi td{padding:5px 4px;text-align:center;font-family:var(--f-mono);font-variant-numeric:tabular-nums;border:1px solid var(--line)}
 table.hi td.l0{background:var(--surface)} table.hi td.l1{background:var(--lv1)} table.hi td.l2{background:var(--lv2)} table.hi td.l3{background:var(--lv3)} table.hi td.l4{background:var(--lv4)}
@@ -1739,7 +1739,7 @@ a{color:var(--cool)}
       <tr class="lv2"><td class="h">冰</td><td>大量冰塊與冰桶（NATA 建議浸泡槽旁備 3–4 個冰桶；WMS 院內流程 5 桶冰）、冰袋</td><td>NATA、WMS</td></tr>
       <tr><td class="h">其他降溫</td><td>泡手泡前臂的水盆、冰毛巾、冰水噴瓶、風扇、噴霧扇</td><td>NFPA 1584（前臂浸泡）；NATA（WBGT &gt;30 °C 時備冰毛巾與噴瓶）；消防署</td></tr>
       <tr><td class="h">補給</td><td>約 10–15 °C 清涼飲水與電解質飲料、杯子；食鹽或鹹食；香蕉、餅乾、能量棒等易消化食物</td><td>勞動部；消防署第十五至十七點</td></tr>
-      <tr><td class="h">不提供</td><td>含咖啡因高糖飲料、能量飲料、碳酸飲料、酒精</td><td>消防署第十六點</td></tr>
+      <tr class="pink"><td class="h">不提供</td><td>含咖啡因高糖飲料、能量飲料、碳酸飲料、酒精</td><td>消防署第十六點</td></tr>
       <tr><td class="h">醫療</td><td>急救包、AED、氧氣、保溫毯；ALS 備 IV 等張液；3% saline、benzodiazepine 等依醫療指導與給藥範圍</td><td>消防署第十一點；WMS</td></tr>
       <tr><td class="h">場地</td><td>遮陽棚或冷氣室、座椅、地墊、照明、發電機、無線電、洗手設備、廁所、垃圾桶、標示牌與警示帶</td><td>消防署附錄二；勞動部休息場所原則</td></tr>
       <tr><td class="h">毛毛專屬</td><td>隔間屏風（不開放拍照）、毛裝掛架或整理區、剪刀（緊急時剪開毛裝）、替換毛內與毛巾、降溫背心的替換冷源</td><td>推論；Wang 2019（換冷源）</td></tr>
